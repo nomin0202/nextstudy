@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import Sidebar from './Sidebar/sidebar'; // 사이드바 경로에 맞게 수정
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +29,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="navbar">
+          <Link href="/">홈</Link>
+          <Link href="/list">List</Link>
+          <Link href="/cart">Cart</Link>
+        </div>
+      <Sidebar/>
         {children}
       </body>
     </html>
